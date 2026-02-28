@@ -1,0 +1,413 @@
+/* Základní reset a barvy */
+:root {
+    --bg-dark: #1a1c1e;
+    --card-bg: #25282c;
+    --pastel-brown: #C19A6B;
+    --text-light: #e0e0e0;
+    --text-dim: #a0a0a0;
+    --accent-hover: #a6835a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Navigace */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 10%;
+    background: rgba(26, 28, 30, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--pastel-brown);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dim);
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--pastel-brown);
+}
+
+/* Tlačítka */
+.btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-login {
+    color: var(--text-light);
+}
+
+.btn-login:hover{
+    color: var(--text-dim);
+}
+
+.btn-register {
+    background-color: var(--pastel-brown);
+    color: #fff;
+}
+
+.btn-register:hover {
+    background-color: var(--accent-hover);
+}
+
+.btn-primary {
+    background-color: var(--pastel-brown);
+    color: white;
+    padding: 1rem 2rem;
+}
+
+.btn-outline {
+    border: 1px solid var(--pastel-brown);
+    color: var(--pastel-brown);
+    margin-left: 1rem;
+    padding: 1rem 2rem;
+}
+
+.btn-outline:hover {
+    background: var(--pastel-brown);
+    color: white;
+}
+
+
+/* Hero sekce */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5rem 10%;
+    min-height: 80vh;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-content h1 span {
+    color: var(--pastel-brown);
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    margin-bottom: 2.5rem;
+}
+
+.hero-image {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Responzivita */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 2rem;
+    }
+    .hero-content {
+        max-width: 100%;
+        margin-bottom: 3rem;
+    }
+    .nav-links {
+        display: none;
+    }
+}
+
+/* --- STYLY PRO SAMOSTATNÉ STRÁNKY LOGIN/REGISTER --- */
+
+.auth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: radial-gradient(circle at 50% 50%, #25282c 0%, #1a1c1e 100%);
+    padding: 20px;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 420px;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    .logo{
+        text-size: 20px;
+    }
+}
+
+.auth-card {
+    background: var(--card-bg); /* #25282c z předchozího kódu */
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    border: 1px solid rgba(193, 154, 107, 0.05);
+}
+
+.auth-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--text-light);
+}
+
+.input-group {
+    margin-bottom: 1.25rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.85rem 1.1rem;
+    background: #1a1c1e;
+    border: 1px solid #3d4248;
+    border-radius: 10px;
+    color: white;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: var(--pastel-brown);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(193, 154, 107, 0.1);
+}
+
+.btn-full {
+    width: 100%;
+    background: var(--pastel-brown);
+    color: white;
+    padding: 0.9rem;
+    border: none;
+    font-size: 1rem;
+    margin-top: 1rem;
+    box-shadow: 0 4px 12px rgba(193, 154, 107, 0.2);
+}
+
+.btn-full:hover {
+    background: #a6835a;
+    transform: translateY(-1px);
+}
+
+.accent-link {
+    color: var(--pastel-brown);
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.accent-link:hover {
+    text-decoration: underline;
+}
+
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+}
+
+.switch-text {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: var(--text-dim);
+}
+
+.terms {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.dashboard-body {
+    background-color: var(--bg-dark);
+}
+
+.dashboard-container {
+    padding: 2rem 10%;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Menší karta vlevo, graf vpravo */
+    gap: 2rem;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(193, 154, 107, 0.1);
+}
+
+.card h3 {
+    margin-bottom: 1.5rem;
+    color: var(--pastel-brown);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.temp-display {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.temp-value {
+    font-size: 4rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.unit {
+    font-size: 2rem;
+    color: var(--pastel-brown);
+}
+
+.location-info p {
+    color: var(--text-dim);
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.btn-logout {
+    color: #ff6b6b;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border: 1px solid #ff6b6b;
+    padding: 0.4rem 0.8rem;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-logout:hover {
+    background: #ff6b6b;
+    color: white;
+}
+
+/* Responzivita pro mobil */
+@media (max-width: 900px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Kontejner pro jméno a tlačítka */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.user-name {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+}
+
+/* Skupina tlačítek vedle sebe */
+.nav-actions {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+/* Styl pro tlačítko Nastavení */
+.btn-settings {
+    color: var(--pastel-brown);
+    text-decoration: none;
+    font-size: 0.9rem;
+    border: 1px solid var(--pastel-brown);
+    padding: 0.4rem 0.8rem;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-settings:hover {
+    background: var(--pastel-brown);
+    color: white;
+}
+
+/* Styl pro tlačítko Odhlásit (už máš, jen pro kontrolu) */
+.btn-logout {
+    color: #ff6b6b;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border: 1px solid #ff6b6b;
+    padding: 0.4rem 0.8rem;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-logout:hover {
+    background: #ff6b6b;
+    color: white;
+}
